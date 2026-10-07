@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Navigate, Route, Routes, Link, useLocation } from 'react-router-dom'
 import Marketing from './pages/Marketing.jsx'
 import Login from './pages/Login.jsx'
@@ -12,6 +13,10 @@ function Guard({ children }) {
 export default function App() {
   const loc = useLocation()
   const onFloor = loc.pathname.startsWith('/floor')
+  useEffect(() => {
+    const look = localStorage.getItem('galley.look') || 'crew'
+    document.documentElement.dataset.look = look
+  }, [])
   return (
     <Routes>
       <Route path="/" element={<Marketing />} />

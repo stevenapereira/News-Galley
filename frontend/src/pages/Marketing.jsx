@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { api } from '../api.js'
+import { CastRow, LOOKS } from '../characters.jsx'
+
+const LOOK_KEY = 'galley.look'
 
 export default function Marketing() {
   const nav = useNavigate()
@@ -11,12 +14,18 @@ export default function Marketing() {
   const [preview, setPreview] = useState(null)
   const [busy, setBusy] = useState(false)
   const [err, setErr] = useState('')
+  const [look, setLook] = useState(() => localStorage.getItem(LOOK_KEY) || 'crew')
 
   useEffect(() => {
     api('/api/public/retainers').then(setRetainers).catch(() => {})
     api('/api/public/publications').then(setPubs).catch(() => {})
     api('/api/public/hosting').then(setHosting).catch(() => {})
   }, [])
+
+  useEffect(() => {
+    document.documentElement.dataset.look = look
+    localStorage.setItem(LOOK_KEY, look)
+  }, [look])
 
   async function scan(e) {
     e.preventDefault()
@@ -34,12 +43,22 @@ export default function Marketing() {
     }
   }
 
+  const current = LOOKS.find((l) => l.id === look) || LOOKS[1]
+
   return (
     <div>
+      <div className="look-bar" role="tablist" aria-label="Homepage looks">
+        {LOOKS.map((l) => (
+          <button key={l.id} type="button" className={look === l.id ? 'on' : ''} onClick={() => setLook(l.id)}>
+            {l.name}
+          </button>
+        ))}
+      </div>
+      <p className="look-note">{current.blurb} Flip looks anytime. The floor stays the same.</p>
       <header className="masthead">
         <div className="site-wrap">
           <div className="masthead-top">
-            <span>Aurora floor</span>
+            <span>{current.name} floor</span>
             <span>newsgalley.com</span>
             <span>Scan · Write · Pitch</span>
           </div>
@@ -56,6 +75,7 @@ export default function Marketing() {
       </header>
 
       <main className="site-wrap">
+        <CastRow look={look} />
         <section className="hero" id="scan">
           <div>
             <div className="kicker">Paste a domain. See the brief before you pay.</div>
@@ -100,17 +120,20 @@ export default function Marketing() {
             <article className="card step">
               <div className="num">1</div>
               <h4>Scan</h4>
-              <p>Paste a URL. The floor locks voice, audience, competitors, and keyword gaps before a word is drafted.</p>
+              <p>Scoop reads the URL. Voice, audience, competitors, and keyword gaps lock before a word is drafted.</p>
+              <span className="speech">Paste it. I will sniff the DNA.</span>
             </article>
             <article className="card step">
               <div className="num">2</div>
               <h4>Write</h4>
-              <p>Articles follow the keywords you chose. Client links land only when the beat earns them. You edit or regenerate in review.</p>
+              <p>Nib follows the keywords you chose. Client links land only when the beat earns them. You edit or regenerate in review.</p>
+              <span className="speech">Not a biography. A brief.</span>
             </article>
             <article className="card step">
               <div className="num">3</div>
               <h4>Pitch</h4>
-              <p>Each publication has a desk style. Pitches go to that desk. Mesh copies noindex. Canonical stays on the winning URL.</p>
+              <p>Dash walks each draft to a real desk. Mesh copies noindex. Canonical stays on the winning URL.</p>
+              <span className="speech">No blast. One desk. One letter.</span>
             </article>
           </div>
         </section>
