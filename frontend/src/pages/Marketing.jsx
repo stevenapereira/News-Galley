@@ -118,21 +118,21 @@ export default function Marketing() {
           <h3>Scan, write, pitch</h3>
           <div className="grid-3">
             <article className="card step">
-              <StepCast who="scan" look={look} />
+              <div className="step-art"><StepCast who="scan" look={look} /></div>
               <div className="num">1</div>
               <h4>Scan</h4>
               <p>Scoop reads the URL. Voice, audience, competitors, and keyword gaps lock before a word is drafted.</p>
               <span className="speech">Paste it. I will sniff the DNA.</span>
             </article>
             <article className="card step">
-              <StepCast who="write" look={look} />
+              <div className="step-art"><StepCast who="write" look={look} /></div>
               <div className="num">2</div>
               <h4>Write</h4>
               <p>Nib follows the keywords you chose. Client links land only when the beat earns them. You edit or regenerate in review.</p>
               <span className="speech">Not a biography. A brief.</span>
             </article>
             <article className="card step">
-              <StepCast who="pitch" look={look} />
+              <div className="step-art"><StepCast who="pitch" look={look} /></div>
               <div className="num">3</div>
               <h4>Pitch</h4>
               <p>Dash walks each draft to a real desk. Mesh copies noindex. Canonical stays on the winning URL.</p>

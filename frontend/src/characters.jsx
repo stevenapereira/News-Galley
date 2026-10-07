@@ -181,17 +181,17 @@ export function HeroBabies({ look }) {
   return (
     <div className="hero-stage">
       <Smoke />
-      <div className="baby baby-tl"><ScanBaby size="baby" /></div>
-      <div className="baby baby-tr"><Nib size="baby" /></div>
-      <div className="baby baby-bl"><Dash size="baby" /></div>
+      <div className="baby run r1"><ScanBaby size="baby" caption={false} /></div>
+      <div className="baby run r2"><Nib size="baby" caption={false} /></div>
+      <div className="baby run r3"><Dash size="baby" caption={false} /></div>
     </div>
   )
 }
 
 export function StepCast({ who, look }) {
-  if (who === 'scan') return look === 'gremlins' ? <Gizmo size="card" /> : <Scoop size="card" />
-  if (who === 'write') return <Nib size="card" />
-  return <Dash size="card" />
+  if (who === 'scan') return look === 'gremlins' ? <Gizmo size="card" caption={false} /> : <Scoop size="card" caption={false} />
+  if (who === 'write') return <Nib size="card" caption={false} />
+  return <Dash size="card" caption={false} />
 }
 
 export const LOOKS = [
