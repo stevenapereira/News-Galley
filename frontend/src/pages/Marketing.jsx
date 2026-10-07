@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { api } from '../api.js'
-import { CastRow, LOOKS } from '../characters.jsx'
+import { HeroBabies, LOOKS, StepCast } from '../characters.jsx'
 
 const LOOK_KEY = 'galley.look'
 
@@ -75,8 +75,8 @@ export default function Marketing() {
       </header>
 
       <main className="site-wrap">
-        <CastRow look={look} />
         <section className="hero" id="scan">
+          <HeroBabies look={look} />
           <div>
             <div className="kicker">Paste a domain. See the brief before you pay.</div>
             <h2>We scan the site, write the keyword, pitch the desk.</h2>
@@ -118,18 +118,21 @@ export default function Marketing() {
           <h3>Scan, write, pitch</h3>
           <div className="grid-3">
             <article className="card step">
+              <StepCast who="scan" look={look} />
               <div className="num">1</div>
               <h4>Scan</h4>
               <p>Scoop reads the URL. Voice, audience, competitors, and keyword gaps lock before a word is drafted.</p>
               <span className="speech">Paste it. I will sniff the DNA.</span>
             </article>
             <article className="card step">
+              <StepCast who="write" look={look} />
               <div className="num">2</div>
               <h4>Write</h4>
               <p>Nib follows the keywords you chose. Client links land only when the beat earns them. You edit or regenerate in review.</p>
               <span className="speech">Not a biography. A brief.</span>
             </article>
             <article className="card step">
+              <StepCast who="pitch" look={look} />
               <div className="num">3</div>
               <h4>Pitch</h4>
               <p>Dash walks each draft to a real desk. Mesh copies noindex. Canonical stays on the winning URL.</p>

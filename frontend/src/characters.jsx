@@ -1,168 +1,197 @@
-export function Scoop({ line = 'I read the site before anyone writes.' }) {
+function Smoke({ className = '' }) {
   return (
-    <figure className="cast-card scoop">
-      <svg viewBox="0 0 220 240" className="cast-svg" aria-hidden="true">
-        <ellipse className="shadow" cx="110" cy="222" rx="58" ry="10" />
+    <svg className={`smoke-svg ${className}`} viewBox="0 0 320 220" aria-hidden="true">
+      <g className="puff a"><ellipse cx="70" cy="150" rx="38" ry="22" /><ellipse cx="98" cy="128" rx="28" ry="18" /></g>
+      <g className="puff b"><ellipse cx="170" cy="90" rx="46" ry="26" /><ellipse cx="204" cy="70" rx="24" ry="16" /></g>
+      <g className="puff c"><ellipse cx="250" cy="150" rx="36" ry="20" /><ellipse cx="274" cy="132" rx="18" ry="12" /></g>
+    </svg>
+  )
+}
+
+export function Scoop({ size = 'card', caption = true, line = 'I sniff the site before anyone writes.' }) {
+  return (
+    <figure className={`cast-card scoop size-${size}`}>
+      <svg viewBox="0 0 200 220" className="cast-svg" aria-hidden="true">
+        <ellipse className="shadow" cx="100" cy="208" rx="48" ry="8" />
         <g className="bob">
-          <ellipse cx="110" cy="148" rx="62" ry="58" fill="#f4d27a" stroke="#1a1208" strokeWidth="4" />
-          <ellipse cx="78" cy="132" rx="16" ry="28" fill="#e8b85a" stroke="#1a1208" strokeWidth="3" />
-          <ellipse cx="142" cy="132" rx="16" ry="28" fill="#e8b85a" stroke="#1a1208" strokeWidth="3" />
+          <path d="M62 168 q38 22 76 0 v18 q-38 14 -76 0z" fill="#2b3a8f" stroke="#1a1208" strokeWidth="3.5" />
+          <path d="M70 150 q30 28 60 0 q4 28 -30 38 q-34 -10 -30 -38z" fill="#f4c56a" stroke="#1a1208" strokeWidth="3.5" />
+          <ellipse cx="68" cy="132" rx="14" ry="22" fill="#e8b24a" stroke="#1a1208" strokeWidth="3" />
+          <ellipse cx="132" cy="132" rx="14" ry="22" fill="#e8b24a" stroke="#1a1208" strokeWidth="3" />
+          <circle cx="100" cy="118" r="46" fill="#ffd27a" stroke="#1a1208" strokeWidth="3.5" />
+          <path d="M62 108 q38 -28 76 0" fill="#c9842a" stroke="#1a1208" strokeWidth="3" />
+          <path d="M54 92 q-8 -38 28 -48" fill="none" stroke="#1a1208" strokeWidth="3.5" strokeLinecap="round" />
+          <path d="M146 92 q8 -38 -28 -48" fill="none" stroke="#1a1208" strokeWidth="3.5" strokeLinecap="round" />
+          <circle cx="58" cy="42" r="7" fill="#ff5a1f" stroke="#1a1208" strokeWidth="3" />
+          <circle cx="142" cy="42" r="7" fill="#2b3a8f" stroke="#1a1208" strokeWidth="3" />
+          <path d="M56 86 h88 v18 h-88z" fill="#1c140c" />
+          <path d="M64 70 h72 l8 16 h-88z" fill="#ff5a1f" stroke="#1a1208" strokeWidth="3" />
+          <rect x="88" y="74" width="24" height="8" rx="2" fill="#ffd036" />
           <g className="glasses">
-            <circle cx="86" cy="128" r="26" fill="#dff7ff" stroke="#1a1208" strokeWidth="4" />
-            <circle cx="134" cy="128" r="26" fill="#dff7ff" stroke="#1a1208" strokeWidth="4" />
-            <path d="M112 128 h10" stroke="#1a1208" strokeWidth="4" />
-            <rect className="scan-beam" x="64" y="118" width="92" height="8" rx="4" />
-            <circle className="pupil" cx="90" cy="130" r="7" />
-            <circle className="pupil" cx="138" cy="130" r="7" />
+            <circle cx="80" cy="118" r="18" fill="#e8fbff" stroke="#1a1208" strokeWidth="3.5" />
+            <circle cx="120" cy="118" r="18" fill="#e8fbff" stroke="#1a1208" strokeWidth="3.5" />
+            <path d="M98 118 h4" stroke="#1a1208" strokeWidth="3.5" />
+            <rect className="scan-beam" x="64" y="110" width="72" height="6" rx="3" />
+            <circle className="pupil" cx="84" cy="120" r="5" />
+            <circle className="pupil" cx="124" cy="120" r="5" />
+            <circle cx="86" cy="116" r="2" fill="#fff" />
+            <circle cx="126" cy="116" r="2" fill="#fff" />
           </g>
-          <path d="M96 156 q14 12 28 0" fill="none" stroke="#1a1208" strokeWidth="3" strokeLinecap="round" />
-          <ellipse cx="110" cy="92" rx="34" ry="16" fill="#c9842a" stroke="#1a1208" strokeWidth="3" />
-          <path d="M78 86 q-18 -28 8 -40" fill="none" stroke="#1a1208" strokeWidth="4" strokeLinecap="round" />
-          <path d="M142 86 q18 -28 -8 -40" fill="none" stroke="#1a1208" strokeWidth="4" strokeLinecap="round" />
-          <circle cx="70" cy="46" r="6" fill="#5ce1ff" stroke="#1a1208" strokeWidth="3" />
-          <circle cx="150" cy="46" r="6" fill="#ff6bd6" stroke="#1a1208" strokeWidth="3" />
+          <ellipse cx="100" cy="146" rx="8" ry="5" fill="#c9842a" stroke="#1a1208" strokeWidth="2" />
+          <path d="M88 156 q12 10 24 0" fill="none" stroke="#1a1208" strokeWidth="3" strokeLinecap="round" />
+          <g className="glass-hand">
+            <circle cx="164" cy="148" r="22" fill="none" stroke="#1a1208" strokeWidth="5" />
+            <circle cx="164" cy="148" r="16" fill="rgba(232,251,255,0.35)" stroke="#5ce1ff" strokeWidth="2" />
+            <path d="M180 164 l16 16" stroke="#1a1208" strokeWidth="6" strokeLinecap="round" />
+          </g>
         </g>
       </svg>
-      <figcaption>
-        <strong>Scoop</strong>
-        <span>{line}</span>
-      </figcaption>
+      {caption ? (
+        <figcaption>
+          <strong>Scoop</strong>
+          {size !== 'baby' ? <span>{line}</span> : null}
+        </figcaption>
+      ) : null}
     </figure>
   )
 }
 
-export function Nib({ line = 'I write the keyword. Not your life story.' }) {
+export function Nib({ size = 'card', caption = true, line = 'I write the keyword. Not your life story.' }) {
   return (
-    <figure className="cast-card nib">
-      <svg viewBox="0 0 220 240" className="cast-svg" aria-hidden="true">
-        <ellipse className="shadow" cx="110" cy="222" rx="58" ry="10" />
+    <figure className={`cast-card nib size-${size}`}>
+      <svg viewBox="0 0 200 220" className="cast-svg" aria-hidden="true">
+        <ellipse className="shadow" cx="100" cy="208" rx="48" ry="8" />
         <g className="bob delay">
-          <ellipse cx="110" cy="118" rx="54" ry="50" fill="#7ad0c5" stroke="#1a1208" strokeWidth="4" />
-          <circle cx="92" cy="112" r="10" fill="#fff" stroke="#1a1208" strokeWidth="3" />
-          <circle cx="128" cy="112" r="10" fill="#fff" stroke="#1a1208" strokeWidth="3" />
-          <circle className="pupil" cx="94" cy="114" r="4" />
-          <circle className="pupil" cx="130" cy="114" r="4" />
-          <ellipse cx="110" cy="132" rx="10" ry="7" fill="#ff8f6b" stroke="#1a1208" strokeWidth="2" />
           <g className="tentacle t1">
-            <path d="M70 150 q-40 30 -20 62" fill="none" stroke="#1a1208" strokeWidth="10" strokeLinecap="round" />
-            <path d="M70 150 q-40 30 -20 62" fill="none" stroke="#7ad0c5" strokeWidth="6" strokeLinecap="round" />
-          </g>
-          <g className="tentacle t2">
-            <path d="M150 150 q40 28 24 60" fill="none" stroke="#1a1208" strokeWidth="10" strokeLinecap="round" />
-            <path d="M150 150 q40 28 24 60" fill="none" stroke="#7ad0c5" strokeWidth="6" strokeLinecap="round" />
+            <path d="M58 150 q-36 24 -22 52" fill="none" stroke="#1a1208" strokeWidth="12" strokeLinecap="round" />
+            <path d="M58 150 q-36 24 -22 52" fill="none" stroke="#5ecfc2" strokeWidth="8" strokeLinecap="round" />
           </g>
           <g className="tentacle t3">
-            <path d="M88 168 q-10 40 18 52" fill="none" stroke="#1a1208" strokeWidth="10" strokeLinecap="round" />
-            <path d="M88 168 q-10 40 18 52" fill="none" stroke="#5bb8ad" strokeWidth="6" strokeLinecap="round" />
+            <path d="M78 168 q-8 34 16 42" fill="none" stroke="#1a1208" strokeWidth="12" strokeLinecap="round" />
+            <path d="M78 168 q-8 34 16 42" fill="none" stroke="#4eb8ac" strokeWidth="8" strokeLinecap="round" />
           </g>
+          <g className="tentacle t2">
+            <path d="M128 168 q12 32 -8 44" fill="none" stroke="#1a1208" strokeWidth="12" strokeLinecap="round" />
+            <path d="M128 168 q12 32 -8 44" fill="none" stroke="#5ecfc2" strokeWidth="8" strokeLinecap="round" />
+          </g>
+          <ellipse cx="100" cy="128" rx="48" ry="46" fill="#7ad8cc" stroke="#1a1208" strokeWidth="3.5" />
+          <path d="M70 96 q30 -22 60 0 q-8 18 -30 18 q-22 0 -30 -18z" fill="#ff5a1f" stroke="#1a1208" strokeWidth="3" />
+          <circle cx="78" cy="86" r="7" fill="#ffd036" stroke="#1a1208" strokeWidth="2.5" />
+          <circle cx="82" cy="112" r="16" fill="#fff" stroke="#1a1208" strokeWidth="3" />
+          <circle cx="118" cy="112" r="16" fill="#fff" stroke="#1a1208" strokeWidth="3" />
+          <circle className="pupil" cx="86" cy="116" r="6" />
+          <circle className="pupil" cx="122" cy="116" r="6" />
+          <circle cx="88" cy="112" r="2.2" fill="#fff" />
+          <circle cx="124" cy="112" r="2.2" fill="#fff" />
+          <ellipse cx="72" cy="132" rx="8" ry="5" fill="#ff9aa2" opacity="0.85" />
+          <ellipse cx="128" cy="132" rx="8" ry="5" fill="#ff9aa2" opacity="0.85" />
+          <ellipse cx="100" cy="138" rx="9" ry="6" fill="#ff8f6b" stroke="#1a1208" strokeWidth="2" />
+          <path d="M90 152 q10 8 20 0" fill="none" stroke="#1a1208" strokeWidth="3" strokeLinecap="round" />
           <g className="pen-arm">
-            <path d="M142 150 q46 -8 62 -46" fill="none" stroke="#1a1208" strokeWidth="10" strokeLinecap="round" />
-            <path d="M142 150 q46 -8 62 -46" fill="none" stroke="#7ad0c5" strokeWidth="6" strokeLinecap="round" />
-            <g transform="translate(196 86) rotate(-28)">
-              <rect x="-6" y="-28" width="12" height="46" rx="3" fill="#1a1208" />
-              <rect x="-4" y="-26" width="8" height="30" fill="#ffd36a" />
-              <path d="M-4 4 L0 18 L4 4 Z" fill="#5ce1ff" stroke="#1a1208" strokeWidth="1.5" />
+            <path d="M138 148 q40 -6 56 -40" fill="none" stroke="#1a1208" strokeWidth="12" strokeLinecap="round" />
+            <path d="M138 148 q40 -6 56 -40" fill="none" stroke="#7ad8cc" strokeWidth="8" strokeLinecap="round" />
+            <g transform="translate(188 92) rotate(-32)">
+              <rect x="-7" y="-34" width="14" height="52" rx="4" fill="#1a1208" />
+              <rect x="-5" y="-32" width="10" height="34" fill="#ffd036" />
+              <path d="M-5 2 L0 20 L5 2 Z" fill="#5ce1ff" stroke="#1a1208" strokeWidth="1.5" />
             </g>
           </g>
           <g className="ink-drop">
-            <path d="M168 58 q8 14 0 22 q-8 -6 0 -22z" fill="#5ce1ff" />
+            <path d="M158 54 q8 14 0 22 q-8 -6 0 -22z" fill="#2b3a8f" />
           </g>
         </g>
       </svg>
-      <figcaption>
-        <strong>Nib</strong>
-        <span>{line}</span>
-      </figcaption>
+      {caption ? (
+        <figcaption>
+          <strong>Nib</strong>
+          {size !== 'baby' ? <span>{line}</span> : null}
+        </figcaption>
+      ) : null}
     </figure>
   )
 }
 
-export function Dash({ line = 'I walk the draft to a real desk.' }) {
+export function Dash({ size = 'card', caption = true, line = 'I walk the draft to a real desk.' }) {
   return (
-    <figure className="cast-card dash">
-      <svg viewBox="0 0 220 240" className="cast-svg" aria-hidden="true">
-        <ellipse className="shadow" cx="110" cy="222" rx="58" ry="10" />
+    <figure className={`cast-card dash size-${size}`}>
+      <svg viewBox="0 0 200 220" className="cast-svg" aria-hidden="true">
+        <ellipse className="shadow" cx="100" cy="208" rx="48" ry="8" />
         <g className="plane">
-          <path d="M40 48 L92 62 L48 70 Z" fill="#fff6d8" stroke="#1a1208" strokeWidth="3" />
-          <path d="M92 62 L70 66" stroke="#1a1208" strokeWidth="2" />
+          <path d="M28 44 L78 58 L36 68 Z" fill="#fff6d8" stroke="#1a1208" strokeWidth="3" />
         </g>
         <g className="bob">
-          <ellipse cx="118" cy="142" rx="46" ry="40" fill="#f2a65a" stroke="#1a1208" strokeWidth="4" />
-          <ellipse cx="128" cy="108" rx="32" ry="28" fill="#ffd19a" stroke="#1a1208" strokeWidth="4" />
-          <circle cx="138" cy="104" r="8" fill="#fff" stroke="#1a1208" strokeWidth="3" />
-          <circle className="pupil" cx="140" cy="105" r="3.5" />
-          <path d="M154 110 l22 -4 l-18 12z" fill="#ff6b4a" stroke="#1a1208" strokeWidth="3" />
+          <ellipse cx="108" cy="156" rx="40" ry="34" fill="#f2a65a" stroke="#1a1208" strokeWidth="3.5" />
           <g className="wing">
-            <ellipse cx="96" cy="138" rx="28" ry="14" fill="#e0893c" stroke="#1a1208" strokeWidth="3" />
+            <ellipse cx="78" cy="150" rx="26" ry="12" fill="#e0893c" stroke="#1a1208" strokeWidth="3" />
           </g>
-          <path d="M100 86 q18 -18 40 0 q-22 8 -40 0z" fill="#2b3a8f" stroke="#1a1208" strokeWidth="3" />
-          <rect x="112" y="70" width="28" height="10" rx="3" fill="#ffd36a" stroke="#1a1208" strokeWidth="3" />
-          <path d="M108 180 q8 18 0 28" stroke="#1a1208" strokeWidth="4" fill="none" />
-          <path d="M128 180 q8 18 0 28" stroke="#1a1208" strokeWidth="4" fill="none" />
+          <path d="M92 188 q6 16 0 24" stroke="#1a1208" strokeWidth="4" fill="none" strokeLinecap="round" />
+          <path d="M118 188 q8 16 2 24" stroke="#1a1208" strokeWidth="4" fill="none" strokeLinecap="round" />
+          <circle cx="118" cy="112" r="30" fill="#ffd19a" stroke="#1a1208" strokeWidth="3.5" />
+          <path d="M96 92 q22 -22 46 2 q-26 10 -46 -2z" fill="#2b3a8f" stroke="#1a1208" strokeWidth="3" />
+          <rect x="108" y="78" width="26" height="9" rx="2" fill="#ffd036" stroke="#1a1208" strokeWidth="2.5" />
+          <circle cx="128" cy="110" r="9" fill="#fff" stroke="#1a1208" strokeWidth="3" />
+          <circle className="pupil" cx="131" cy="111" r="3.5" />
+          <circle cx="132" cy="109" r="1.4" fill="#fff" />
+          <path d="M142 116 l22 -6 l-18 14z" fill="#ff5a1f" stroke="#1a1208" strokeWidth="3" />
+          <path d="M108 128 q10 8 18 2" fill="none" stroke="#1a1208" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M86 150 q-18 8 -8 28 h28 q-6 -18 0 -28z" fill="#2b3a8f" stroke="#1a1208" strokeWidth="3" />
+          <rect x="78" y="162" width="22" height="8" rx="2" fill="#ffd036" />
         </g>
       </svg>
-      <figcaption>
-        <strong>Dash</strong>
-        <span>{line}</span>
-      </figcaption>
+      {caption ? (
+        <figcaption>
+          <strong>Dash</strong>
+          {size !== 'baby' ? <span>{line}</span> : null}
+        </figcaption>
+      ) : null}
     </figure>
   )
 }
 
-export function Gizmo({ line = 'I stamp the ledger so nobody loses the plot.' }) {
+export function Gizmo({ size = 'card', caption = true, line = 'I stamp the ledger.' }) {
   return (
-    <figure className="cast-card gizmo">
-      <svg viewBox="0 0 220 240" className="cast-svg" aria-hidden="true">
-        <ellipse className="shadow" cx="110" cy="222" rx="58" ry="10" />
+    <figure className={`cast-card gizmo size-${size}`}>
+      <svg viewBox="0 0 200 220" className="cast-svg" aria-hidden="true">
+        <ellipse className="shadow" cx="100" cy="208" rx="48" ry="8" />
         <g className="stamp">
-          <rect x="78" y="28" width="64" height="22" rx="6" fill="#ff6bd6" stroke="#1a1208" strokeWidth="3" />
-          <text x="110" y="44" textAnchor="middle" fontSize="9" fontFamily="Bangers, cursive" fill="#1a1208">PLACED</text>
+          <rect x="68" y="24" width="64" height="22" rx="6" fill="#ff6bd6" stroke="#1a1208" strokeWidth="3" />
+          <text x="100" y="40" textAnchor="middle" fontSize="9" fontFamily="Bangers, cursive" fill="#1a1208">PLACED</text>
         </g>
         <g className="bob delay2">
-          <path d="M60 150 q20 -70 50 -70 q30 0 50 70 q-50 30 -100 0z" fill="#b38bff" stroke="#1a1208" strokeWidth="4" />
-          <circle cx="92" cy="118" r="14" fill="#fff" stroke="#1a1208" strokeWidth="3" />
-          <circle cx="128" cy="118" r="18" fill="#fff" stroke="#1a1208" strokeWidth="3" />
-          <circle className="pupil" cx="94" cy="120" r="5" />
-          <circle className="pupil" cx="132" cy="122" r="6" />
-          <path d="M98 146 q12 14 28 0" fill="none" stroke="#1a1208" strokeWidth="3" strokeLinecap="round" />
-          <circle cx="70" cy="150" r="10" fill="#7a8bff" stroke="#1a1208" strokeWidth="3" />
-          <circle cx="154" cy="148" r="12" fill="#7a8bff" stroke="#1a1208" strokeWidth="3" />
+          <path d="M52 154 q18 -68 48 -68 q30 0 48 68 q-48 28 -96 0z" fill="#b38bff" stroke="#1a1208" strokeWidth="3.5" />
+          <circle cx="84" cy="118" r="14" fill="#fff" stroke="#1a1208" strokeWidth="3" />
+          <circle cx="118" cy="118" r="17" fill="#fff" stroke="#1a1208" strokeWidth="3" />
+          <circle className="pupil" cx="86" cy="120" r="5" />
+          <circle className="pupil" cx="122" cy="122" r="6" />
+          <path d="M90 146 q10 12 24 0" fill="none" stroke="#1a1208" strokeWidth="3" strokeLinecap="round" />
         </g>
       </svg>
-      <figcaption>
-        <strong>Gizmo</strong>
-        <span>{line}</span>
-      </figcaption>
+      {caption ? (
+        <figcaption>
+          <strong>Gizmo</strong>
+          {size !== 'baby' ? <span>{line}</span> : null}
+        </figcaption>
+      ) : null}
     </figure>
   )
 }
 
-export function CastRow({ look }) {
-  if (look === 'gremlins') {
-    return (
-      <div className="cast-row">
-        <Gizmo line="Scan the domain. I eat the noise." />
-        <Nib line="Then I squeeze a publication-ready draft." />
-        <Dash line="Then I fling it at a real desk." />
-      </div>
-    )
-  }
-  if (look === 'crew') {
-    return (
-      <div className="cast-row">
-        <Scoop />
-        <Nib />
-        <Dash />
-      </div>
-    )
-  }
+export function HeroBabies({ look }) {
+  const ScanBaby = look === 'gremlins' ? Gizmo : Scoop
   return (
-    <div className="cast-row quiet">
-      <Scoop line="Scan." />
-      <Nib line="Write." />
-      <Dash line="Pitch." />
+    <div className="hero-stage">
+      <Smoke />
+      <div className="baby baby-tl"><ScanBaby size="baby" /></div>
+      <div className="baby baby-tr"><Nib size="baby" /></div>
+      <div className="baby baby-bl"><Dash size="baby" /></div>
     </div>
   )
+}
+
+export function StepCast({ who, look }) {
+  if (who === 'scan') return look === 'gremlins' ? <Gizmo size="card" /> : <Scoop size="card" />
+  if (who === 'write') return <Nib size="card" />
+  return <Dash size="card" />
 }
 
 export const LOOKS = [

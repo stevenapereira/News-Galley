@@ -103,7 +103,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   display: grid;
   grid-template-columns: 1.25fr 0.95fr;
   gap: 32px;
-  padding: 42px 0 28px;
+  padding: 64px 0 48px;
 }
 .kicker {
   color: var(--cyan);
