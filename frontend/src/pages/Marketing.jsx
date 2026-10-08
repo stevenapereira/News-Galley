@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { api } from '../api.js'
-import { HeroBabies, LOOKS, StepCast } from '../characters.jsx'
+import { LOOKS, ScanRunner, StepCast, TitleNib } from '../characters.jsx'
 
 const LOOK_KEY = 'galley.look'
 
@@ -76,10 +76,12 @@ export default function Marketing() {
 
       <main className="site-wrap">
         <section className="hero" id="scan">
-          <HeroBabies look={look} />
-          <div>
+          <div className="hero-copy">
             <div className="kicker">Paste a domain. See the brief before you pay.</div>
-            <h2>We scan the site, write the keyword, pitch the desk.</h2>
+            <h2>
+              We scan the site, write the keyword, pitch the{' '}
+              <span className="desk-end">desk.<TitleNib /></span>
+            </h2>
             <p className="lede">
               Enter your URL and the floor reads voice, audience, and keyword gaps. You choose the keywords.
               We write publication-ready copy, stop it in review for you, then pitch real desks and host the
@@ -87,6 +89,7 @@ export default function Marketing() {
             </p>
           </div>
           <form className="scan-box" onSubmit={scan}>
+            <ScanRunner look={look} />
             <h3>What you get from a scan</h3>
             <p style={{ color: 'var(--muted)', marginTop: 0 }}>
               Voice lock, landscape authorities, and the keyword list the writer will actually follow — not a biography of you.

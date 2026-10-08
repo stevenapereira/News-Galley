@@ -1,4 +1,4 @@
-function Smoke({ className = '' }) {
+export function Smoke({ className = '' }) {
   return (
     <svg className={`smoke-svg ${className}`} viewBox="0 0 320 220" aria-hidden="true">
       <g className="puff a"><ellipse cx="70" cy="150" rx="38" ry="22" /><ellipse cx="98" cy="128" rx="28" ry="18" /></g>
@@ -176,14 +176,67 @@ export function Gizmo({ size = 'card', caption = true, line = 'I stamp the ledge
   )
 }
 
-export function HeroBabies({ look }) {
-  const ScanBaby = look === 'gremlins' ? Gizmo : Scoop
+export function TitleNib() {
   return (
-    <div className="hero-stage">
-      <Smoke />
-      <div className="baby run r1"><ScanBaby size="baby" caption={false} /></div>
-      <div className="baby run r2"><Nib size="baby" caption={false} /></div>
-      <div className="baby run r3"><Dash size="baby" caption={false} /></div>
+    <span className="title-cast">
+      <Nib size="baby" caption={false} />
+    </span>
+  )
+}
+
+export function ScoopSide() {
+  return (
+    <svg className="scoop-side" viewBox="0 0 280 160" aria-hidden="true">
+      <g className="run-smoke-puffs">
+        <g className="cloud n1">
+          <circle cx="88" cy="118" r="8" />
+          <circle cx="78" cy="114" r="11" />
+          <circle cx="68" cy="120" r="7" />
+        </g>
+        <g className="cloud n2">
+          <circle cx="70" cy="108" r="11" />
+          <circle cx="56" cy="102" r="15" />
+          <circle cx="44" cy="110" r="10" />
+          <circle cx="58" cy="116" r="8" />
+        </g>
+        <g className="cloud n3">
+          <circle cx="48" cy="92" r="13" />
+          <circle cx="32" cy="86" r="17" />
+          <circle cx="22" cy="98" r="12" />
+          <circle cx="38" cy="102" r="9" />
+        </g>
+      </g>
+      <g className="run-body">
+        <ellipse className="shadow" cx="132" cy="140" rx="40" ry="6" />
+        <path d="M96 108 q24 14 46 0 q8 18 -6 30 q-30 6 -46 -8 q-6 -10 6 -22z" fill="#2b3a8f" stroke="#1a1208" strokeWidth="3.2" />
+        <path d="M112 132 q6 14 -2 22" fill="none" stroke="#1a1208" strokeWidth="4.2" strokeLinecap="round" />
+        <path className="rear-leg" d="M128 130 q18 12 8 24" fill="none" stroke="#1a1208" strokeWidth="4.2" strokeLinecap="round" />
+        <ellipse cx="122" cy="98" rx="18" ry="14" fill="#ffd27a" stroke="#1a1208" strokeWidth="3" />
+        <circle cx="154" cy="70" r="32" fill="#ffd27a" stroke="#1a1208" strokeWidth="3.2" />
+        <path d="M136 40 q-6 -28 4 -38" fill="none" stroke="#1a1208" strokeWidth="3.4" strokeLinecap="round" />
+        <circle cx="140" cy="18" r="6" fill="#ff5a1f" stroke="#1a1208" strokeWidth="2.4" />
+        <path d="M128 52 q28 -16 52 8 q-8 8 -26 10 q-18 0 -26 -18z" fill="#ff5a1f" stroke="#1a1208" strokeWidth="2.6" />
+        <rect x="150" y="50" width="16" height="6" rx="1.4" fill="#ffd036" />
+        <ellipse cx="168" cy="70" rx="10" ry="12" fill="#fff" stroke="#1a1208" strokeWidth="2.8" />
+        <circle className="pupil" cx="172" cy="72" r="4.2" />
+        <circle cx="174" cy="69" r="1.4" fill="#fff" />
+        <path d="M182 76 l16 -3 l-12 11z" fill="#ff5a1f" stroke="#1a1208" strokeWidth="2.4" />
+        <path d="M158 86 q10 7 16 0" fill="none" stroke="#1a1208" strokeWidth="2.6" strokeLinecap="round" />
+        <g className="glass-hand">
+          <path d="M140 108 L170 104" stroke="#1a1208" strokeWidth="5" strokeLinecap="round" />
+          <circle cx="186" cy="102" r="16" fill="none" stroke="#1a1208" strokeWidth="4" />
+          <circle cx="186" cy="102" r="11" fill="rgba(232,251,255,0.4)" stroke="#5ce1ff" strokeWidth="1.8" />
+        </g>
+      </g>
+    </svg>
+  )
+}
+
+export function ScanRunner({ look }) {
+  return (
+    <div className="scan-runner" aria-hidden="true">
+      <Smoke className="run-smoke" />
+      {look === 'gremlins' ? <Gizmo size="baby" caption={false} /> : <ScoopSide />}
     </div>
   )
 }
